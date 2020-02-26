@@ -1,79 +1,252 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>WitaBud</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	</head>
+	<body>
+		<div class="menuAndMain">
+			
+		<div class="main">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Traffic racer</title>
-    <link href="style.css" rel="stylesheet" /> </head>
+	<!-- Header -->
 
-<body>
-    <header><h1>JQuery Traffic Racer</h1></header>
-    <div id="help">
-        <p>Controls:<br /> Right, Left, Up & Down arrow keys.</p>
-    </div>
-    <div id="score_div">
-        Score: <span id="score">0</span>
-        High Score: <span id="high_score">0</span>
-    </div>
+		<header class="header">
+			<div class="header-container">
+				<div class="header-img">
+	<a href="#" class="brand">
+		<a href ="#"><img src="img/header/logo.png" alt="Company Logo" class="logo"></a>
+	</a>
+</div>
+<div class="header-menu">
+	<nav>
+		<div class="menu-items">
+			<div class="menu-element"><div class="activate"><a href="#"> STRONA GŁÓWNA</a></div><div class="menu-rectangle"></div></div>
+			<div class="menu-element"><div class="activate"><a href="#" > O FIRMIE</a></div><div class="menu-rectangle"></div></div>
+			<div class="menu-element"><div class="activate"><a href="#services-section">USŁUGI</a></div><div class="menu-rectangle"></div></div>
+			<div class="menu-element"><div class="activate"><a href="#realization-section" >REALIZACJE</a></div><div class="menu-rectangle"></div></div>
+			<div class="menu-element"><div class="activate"><a href="#footer-section">KONTAKT</a></div><div class="menu-rectangle"></div></div>	
+		</div>
+	</nav>
+</div>
+</div>
+		</header>
 
-    <div id="container">
-        <div id="line_1" class="line"></div>
-        <div id="line_2" class="line"></div>
-        <div id="line_3" class="line"></div>
-        <div id="car" class="car">
-            <div class="f_glass"></div>
-            <div class="b_glass"></div>
-            <div class="f_light_l"></div>
-            <div class="f_light_r"></div>
-            <div class="f_tyre_l"></div>
-            <div class="f_tyre_r"></div>
-            <div class="b_tyre_l"></div>
-            <div class="b_tyre_r"></div>
-        </div>
-        <div id="car_1" class="car">
-            <div class="f_glass"></div>
-            <div class="b_glass"></div>
-            <div class="f_light_l"></div>
-            <div class="f_light_r"></div>
-            <div class="f_tyre_l"></div>
-            <div class="f_tyre_r"></div>
-            <div class="b_tyre_l"></div>
-            <div class="b_tyre_r"></div>
-        </div>
-        <div id="car_2" class="car">
-            <div class="f_glass"></div>
-            <div class="b_glass"></div>
-            <div class="f_light_l"></div>
-            <div class="f_light_r"></div>
-            <div class="f_tyre_l"></div>
-            <div class="f_tyre_r"></div>
-            <div class="b_tyre_l"></div>
-            <div class="b_tyre_r"></div>
-        </div>
-        <div id="car_3" class="car">
-            <div class="f_glass"></div>
-            <div class="b_glass"></div>
-            <div class="f_light_l"></div>
-            <div class="f_light_r"></div>
-            <div class="f_tyre_l"></div>
-            <div class="f_tyre_r"></div>
-            <div class="b_tyre_l"></div>
-            <div class="b_tyre_r"></div>
-        </div>
-        <div id="restart_div">
-            <button id="restart">
-                Restart<br>
-                <small class="small_text">(press Enter)</small>
-            </button>
-        </div>
+		<section class="page-section intro-section">
+			<div class="container-intro">
   
-    </div>
-   
+				<input type="radio" id="i1" name="images" checked />
+				<input type="radio" id="i2" name="images" />
+			   
+				
+				<div class="slide_img" id="one">      
+					
+					<img src="img\intro\Intro_slide_bg_1.png">
+			  
+					  <label class="prev" for="i2"><img src="img/intro/Arrow_left.png" class="arrow arrow_left"></label>
+            <label class="next" for="i2"><img src="img/intro/Arrow_right.png" class="arrow arrow_right"></label>  
+             <div class="intro-slide-container">
+        <div class="intro-owner">WITOLD GOJ</div>
+     <div class="intro-service">USŁUGI REMONTOWO <br /> WYKOŃCZENIOWE</div>	
+       <div class="intro-btn"><a href="#" class="serviceBtn">ZOBACZ USŁUGI</a> <a  href="tel:#+48639852741" class="callBtn" >ZADZWOŃ +48 639 852 741</a></div>
+       <div class="intro-bottom-text"><a href="#services-section" id="intro-down-info">ZOBACZ NASZE USŁUGI</a></div>
+         <div class="intro-bottom-img"> <a href="#services-section"><img src="img\intro\Down_arrow.png" class="intro-down-img"></a></div>
+       </div>
+      </div>
+      
+				<div class="slide_img" id="two">
+				  
+					<img src="img\intro\Intro_slide_bg_2.png" >
+			  
+					  <label class="prev" for="i1"><img src="img/intro/Arrow_left.png" class="arrow arrow_left"></label>
+					  <label class="next" for="i1"><img src="img/intro/Arrow_right.png" class="arrow arrow_right"></label>
+              <div class="intro-slide-container">
+        <div class="intro-owner">WITOLD GOJ</div>
+     <div class="intro-service">USŁUGI REMONTOWO <br /> WYKOŃCZENIOWE</div>	
+	 <div class="intro-btn"><a href="#" class="serviceBtn">ZOBACZ USŁUGI</a> <a  href="tel:#+48639852741" class="callBtn" >ZADZWOŃ +48 639 852 741</a></div>
+	 <div class="intro-bottom-text"><a href="#services-section" id="intro-down-info">ZOBACZ NASZE USŁUGI</a></div>
+         <div class="intro-bottom-img"> <a href="#services-section"><img src="img\intro\Down_arrow.png" class="intro-down-img"></a></div>
+       </div>
+				</div>
+			  </div>
+		</section>
 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.0/jquery-ui.min.js'></script> <!–– Include jQuery library ––> 
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script> <!–– Include jQuery library ––> 
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
-    <script src="script.js"></script>
-</body>
+		<section class="page-section services-section" id="services-section"> 
+<div class="service" id="service-1"><a href="#"><span class="service-info">Malowanie</span></a></div>
+<div class="service" id="service-2"><a href="#"><span class="service-info">Tapetowanie</span></a></div>
+<div class="service" id="service-3"><a href="article.html"><span class="service-info">Układanie
+	kafelek</span></a></div>
+	<div class="service" id="service-4"><a href="#"><span class="service-info">Układanie
+	paneli</span></a></div>
+		</section>
 
+<!-- Recomendations -->
+
+		<section class="page-section recomendation-section" id="recomendation-section"> 
+			<div class="recomendation-container">
+				<div class ="first-recomendation">
+				    <div class=recomemdation-img><img src="img/recomendation/recomendation-1.png" alt="recomendation-first" class="recom_img"> </div>
+					     <div class="recomemdation-nameAndText">
+						<h4 class="recomendation-name">Joanna Kowalska:</h4>
+						<h4 class="recomendation-text">Tricies eu, faucibus quis, porttitor eros cursus lectus gravida ullamc nulla quam nunc, accumsan congue. </h4>
+					</div>
+					
+				</div>
+				<div class ="second-recomendation">
+				    <div class=recomemdation-img><img src="img/recomendation/recomendation-2.png" alt="recomendation-second" class="recom_img"> </div>
+					     <div class="recomemdation-nameAndText">
+							<h4 class="recomendation-name">Wojciech Tomaszkiewicz:</h4>
+							<h4 class="recomendation-text">Laoreet enim. Phasellus fermentum in, dolore facperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada.
+						</h4>
+					</div>
+					
+				</div>
+				<div class ="third-recomendation">
+				    <div class=recomemdation-img><img src="img/recomendation/recomendation-3.png" alt="recomendation-third"  class="recom_img"> </div>
+					     <div class="recomemdation-nameAndText">
+							<h4 class="recomendation-name">Karol Dobrowolski:</h4>
+						<h4 class="recomendation-text">Ripsum Integer aliquam purus. Quisque lorem tortor fringilla sed, vestibulum id, eleifend justo vel bibendu! </h4>
+					</div>
+					
+				</div>
+			</div>
+			</section>
+
+			<!-- Realizations -->
+
+			<section class="page-section realization-section" id="realization-section"> 
+<div class="realization-container">
+  <div class="realization-header">
+	<div class="realization-header-element realization-header-element-title"><h2>REALIZACJE</h2></div>
+	<div class="realization-header-info realization-header-element">Nulla imperdiet sit amet magna. Vestibulum dapibus, mauris nec malesuada fames ac turpis velit, rhoncus eu, lu ipsum.</div>
+	<div class="realization-header-element realization-header-element-arrow"><a href="article.html"><img src="img/realization/right.png" class="realization-arrow realization-arrow-left"></a><a href="article.html"><img src="img/realization/right.png" class="realization-arrow"></a></div>
+	<div class="realization-more realization-header-element"><a href="article.html">ZOBACZ WIĘCEJ</a></div>
+  </div>
+  <div class="realizations">
+  <div class="realization">
+	  <div class="realization-img">
+		  <img src="img/realization/realization-1.png" alt="Układanie kafelek w domu zdrojowym w Krynicy"class="realization-image">
+	  </div>
+	  <div class="realization-text">
+		<h4>Układanie kafelek w domu zdrojowym w Krynicy</h4>
+		<p>Mauris nec malesuada fames ac turpis scing wisi.  Integer sapien massa ac turpis faucibus.</p>
+	</div>
+  </div>
+  <div class="realization">
+	<div class="realization-img">
+		<img src="img/realization/realization-2.png" alt="Tapetowanie w salonie kosmetycznym"class="realization-image">
+	</div>
+	<div class="realization-text">
+	  <h4>Tapetowanie w salonie kosmetycznym</h4>
+	  <p>Tortor fringilla sed, vestib bus orci luctus onsectetuer lobortis quis, varius in, purus. Integer</p>
+  </div>
+</div>
+<div class="realization">
+	<div class="realization-img">
+		<img src="img/realization/realization-3.png" alt="Tapetowanie w restuaracji francuskiej" class="realization-image">
+	</div>
+	<div class="realization-text">
+	  <h4>Tapetowanie w restuaracji francuskiej</h4>
+	  <p>Mauris nec malesuada fames ac turpis scing wis endum sapien massa ac turpis faucibus.</p>
+  </div>
+</div>
+</div>
+</div>
+			</section>
+
+<!-- Footer -->
+
+			<footer>
+
+			<section class="page-section footer-section" id="footer-section"> 
+				
+					<div class="callBar">
+						<div class="barText">
+						<span>Nagły wypadek? </span><span>Potrzebujesz szybkiej pomocy? </span> 
+					</div>
+					<div class="barPhone">
+<span id="tel-number">Zadzwoń<img src="img/footer/phone.png" alt="Zadzwoń"> +48 639 852 741</span>
+					</div>
+					</div>
+					<div class="mapAndContact">
+
+						<div class="contact">
+							<div class="contact-header">
+								<img src="img/footer/logo_copy.png" alt="logo">
+							</div>
+
+							<div class="contact-info">
+								<div class="contact-name contact-info-element">
+									<span id="contact-name">Witold Goj </span><br />
+<span id="contact-loc">ul. Krakowska 25/17 <br />
+32-500 Katowice  <br /></span>
+									</div>
+									<div class="contact-KRS contact-info-element">
+										<br />KRS: 0000031349 <br />
+NIP: 2562378410 <br />
+									</div>
+								<div class="contact-telefon contact-info-element">
+									<br />Tel.: +48 639 852 741 <br />
+								<span id="contact-mail">E-mail: <a href="mailto:kontakt@witabud.pl">kontakt@witabud.pl</a></span></a> <br />
+
+								</div>
+							</div>
+
+							<div class="contact-social">
+								<div id="look">OBSERWUJ</div>
+								<div id="social-logos">
+								<a href="#"><div class="social-logo"><img src="img/footer/f.png" alt="Facebook logo" id="look_f"></div></a>
+									<a href="#"><div class="social-logo"><img src="img/footer/g.png" alt="Gmail logo" id="look_g"></div></a>
+								<a href="#">	<div class="social-logo"><img src="img/footer/ins.png" alt="Instagram logo" id="look_ins"></div></a>
+							</div>
+							</div>
+							
+
+							<div class="contact-nav">
+						
+								<div class="menu-items-footer">
+									<div class="down-menu-element"><a href="#">STRONA GŁÓWNA</a></div>
+									<div class="down-menu-element"><a href="#" >O FIRMIE</a></div>
+									<div class="down-menu-element"><a href="#services-section">USŁUGI</a></div>
+									<div class="down-menu-element"><a href="#realization-section" >REALIZACJE</a></div>
+									<div class="down-menu-element"><a href="#footer-section">KONTAKT</a></div>
+								
+								</div>
+						</div>
+
+						</div>
+						<div class="map">
+							
+							<div class="upButton"><div><a href="#">DO GÓRY</div><div class="up"><img src="img/footer/up.png" alt="GÓRA" id="up"></div></a></div>
+						</div>
+					</div>
+<div class="copy">
+	2016 © Made with passion by <span id="last">Time4.pl</span>
+</div>
+
+			</section>
+	</footer>
+		</div>
+
+			<!-- Menu -->
+
+			<div id="burger"><img src="img\menu\burger.png" alt="menu" ></div>
+		<input type="checkbox" class="open_box open"/>
+		 
+		<div class="menu">
+<div class="menu-container">
+
+	<div class="menu-back"><input id="open" type="checkbox" class="open_box open"/><label for="open" id="open-label"><img src="img/menu/arrow.png" alt="<" id="menu-arrow">WRÓĆ</label></div>
+	<div class="menu-item"><a href="#"> STRONA GŁÓWNA</a></div>
+			<div class="menu-item"><a href="#" > O FIRMIE</a></div>
+			<div class="menu-item"><a href="#services-section">USŁUGI</a></div>
+			<div class="menu-item"><a href="#realization-section" >REALIZACJE</a></div>
+			<div class="menu-item"><a href="#footer-section">KONTAKT</a></div>
+		</div>
+
+	</div>
+</div>
+	</body>
 </html>
