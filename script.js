@@ -2,7 +2,7 @@ $(function() {
 
     let anim_id;
 
-    //saving dom objects to letiables
+    //sdtting variable
     let container = $('#container');
     let car = $('#car');
     let car_1 = $('#car_1');
@@ -17,14 +17,14 @@ $(function() {
     let high_score = localStorage.getItem('high_score');
     $('#high_score').text(high_score);
 
-    //saving some initial setup
+   
     let container_left = parseInt(container.css('left'));
     let container_width = parseInt(container.width());
     let container_height = parseInt(container.height());
     let car_width = parseInt(car.width());
     let car_height = parseInt(car.height());
 
-    //some other declarations
+ 
     let game_over = false;
 
     let score_counter = 1;
@@ -38,9 +38,7 @@ $(function() {
     let move_down = false;
 
 
-
- 
-
+//steering from keyboard
     $(document).on('keydown', function(e) {
         if (game_over === false) {
             let key = e.keyCode;
@@ -102,7 +100,46 @@ $(function() {
             move_down = requestAnimationFrame(down);
         }
     }
+//steering from screen
+$(document).ready(function() {
+    $("#left").click(function(){
+        cancelAnimationFrame(move_right);
+ move_right=false;
+        move_left = requestAnimationFrame(left);
+        setTimeout(leftHandlerDown,65);
+    }); 
+    $("#right").click(function(){
+        move_right = requestAnimationFrame(right);
+        setTimeout(rightHandlerDown,65);
+        cancelAnimationFrame(move_left);
+ move_left=false;
+    }); 
+    $("#up").click(function(){
+        move_up = requestAnimationFrame(up);
+        setTimeout(upHandlerDown,65);
+    }); 
+    $("#down").click(function(){
+        move_down = requestAnimationFrame(down);
+        setTimeout(downHandlerDown,65);
+    }); 
+});
 
+function leftHandlerDown (){
+cancelAnimationFrame(move_left);
+ move_left=false;
+}
+function rightHandlerDown (){
+cancelAnimationFrame(move_right);
+ move_right=false;
+}
+function upHandlerDown (){
+cancelAnimationFrame(move_up);
+ move_up=false;
+}
+function downHandlerDown (){
+cancelAnimationFrame(move_down);
+ move_down=false;
+}
     anim_id = requestAnimationFrame(repeat);
 
     function repeat() {
@@ -135,7 +172,7 @@ $(function() {
     function car_down(car) {
         let car_current_top = parseInt(car.css('top'));
         if (car_current_top > container_height) {
-            car_current_top = -200;
+            car_current_top = -2;
             let car_left = parseInt(Math.random() * (container_width - car_width));
             car.css('left', car_left);
         }
@@ -145,7 +182,7 @@ $(function() {
     function line_down(line) {
         let line_current_top = parseInt(line.css('top'));
         if (line_current_top > container_height) {
-            line_current_top = -300;
+            line_current_top = -3;
         }
         line.css('top', line_current_top + line_speed);
     }
