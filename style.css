@@ -24,13 +24,13 @@ body {
     background-color: rgba(255,255,255,0.5);
 }
 #line_1{
-    top: -150px;
+    top: -60px;
 }
 #line_2{
     top: 150px;
 }
 #line_3{
-    top: 450px;
+    top: 370px;
 }
 .car{
     position: absolute;
@@ -162,10 +162,12 @@ body {
     top:30%;
     margin-left: 2%;
     font-size: 20px;
-    background-color: white;
-    color: #454545;
+
     padding: 10px;
     border-radius:2px;
+    background-color: #0079fc;
+    color: white;
+    font-weight:bold;
 }
 #help{
     text-align: center;
@@ -174,8 +176,8 @@ body {
     top:30%;
     right: 2%;
     width:25vw;
-    background-color: white;
-    color: #454545;
+    background-color: #0079fc;
+    color: white;
     border-radius:2px;
 
 
@@ -214,6 +216,12 @@ color:white;
 .button-control button{
     width:60px;
 }
+#easy{
+    position: absolute;
+    top:92%;
+    left:2%;
+}
+
 @media (max-width: 800px) {
     #score_div{
         margin-left: 2%;
@@ -233,4 +241,10 @@ color:white;
         left: 15%;
     
     }
+    #easy{
+        position: absolute;
+        top:60%;
+        left:78% ;
+    }
+    
   }

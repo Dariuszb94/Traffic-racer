@@ -2,7 +2,7 @@ $(function() {
 
     let anim_id;
 
-    //sdtting variable
+    //setting variable
     let container = $('#container');
     let car = $('#car');
     let car_1 = $('#car_1');
@@ -16,6 +16,7 @@ $(function() {
     let score = $('#score');
     let high_score = localStorage.getItem('high_score');
     $('#high_score').text(high_score);
+   let easy_mode=false;
 
    
     let container_left = parseInt(container.css('left'));
@@ -26,17 +27,28 @@ $(function() {
 
  
     let game_over = false;
-
     let score_counter = 1;
-
     let speed = 2;
     let line_speed = 5;
-
     let move_right = false;
     let move_left = false;
     let move_up = false;
     let move_down = false;
 
+    $(document).ready(function() {
+        $("#easy_mode_button").click(function(){
+        if(easy_mode){
+           easy_mode=false;
+           speed=4;
+line_speed=7;
+        }
+        else{
+            easy_mode=true;
+         }
+
+        }); 
+   
+    });
 
 //steering from keyboard
     $(document).on('keydown', function(e) {
@@ -74,28 +86,28 @@ $(function() {
     });
 
     function left() {
-        if (game_over === false && parseInt(car.css('left')) > 0) {
+        if (game_over === false && parseInt(car.css('left')) > 0) { //game cant be over and car cant move outside the container
             car.css('left', parseInt(car.css('left')) - 5);
             move_left = requestAnimationFrame(left);
         }
     }
 
     function right() {
-        if (game_over === false && parseInt(car.css('left')) < container_width - car_width) {
+        if (game_over === false && parseInt(car.css('left')) < container_width - car_width) { //game cant be over and car cant move outside the container
             car.css('left', parseInt(car.css('left')) + 5);
             move_right = requestAnimationFrame(right);
         }
     }
 
     function up() {
-        if (game_over === false && parseInt(car.css('top')) > 0) {
+        if (game_over === false && parseInt(car.css('top')) > 0) { //game cant be over and car cant move outside the container
             car.css('top', parseInt(car.css('top')) - 3);
             move_up = requestAnimationFrame(up);
         }
     }
 
     function down() {
-        if (game_over === false && parseInt(car.css('top')) < container_height - car_height) {
+        if (game_over === false && parseInt(car.css('top')) < container_height - car_height) { //game cant be over and car cant move outside the container
             car.css('top', parseInt(car.css('top')) + 3);
             move_down = requestAnimationFrame(down);
         }
@@ -142,21 +154,27 @@ cancelAnimationFrame(move_down);
 }
     anim_id = requestAnimationFrame(repeat);
 
-    function repeat() {
+    function repeat() { //stopping game if collision is detected
         if (collision(car, car_1) || collision(car, car_2) || collision(car, car_3)) {
             stop_the_game();
             return;
         }
 
-        score_counter++;
+score_counter++;
 
         if (score_counter % 20 == 0) {
             score.text(parseInt(score.text()) + 1);
         }
         if (score_counter % 500 == 0) {
             speed++;
-            line_speed++;
+            line_speed++
         }
+
+if (easy_mode==true){
+    speed=1;
+    line_speed=1;
+}
+
 
         car_down(car_1);
         car_down(car_2);
@@ -169,12 +187,12 @@ cancelAnimationFrame(move_down);
         anim_id = requestAnimationFrame(repeat);
     }
 
-    function car_down(car) {
+    function car_down(car) { //moving car 
         let car_current_top = parseInt(car.css('top'));
         if (car_current_top > container_height) {
             car_current_top = -2;
-            let car_left = parseInt(Math.random() * (container_width - car_width));
-            car.css('left', car_left);
+            let car_left = parseInt(Math.random() * (container_width - car_width)); //random car appearance 
+            car.css('left', car_left); 
         }
         car.css('top', car_current_top + speed);
     }
@@ -211,7 +229,6 @@ cancelAnimationFrame(move_down);
         $('#high_score').text(high_score);
     }
 
-    /* ------------------------------GAME CODE ENDS HERE------------------------------------------- */
 
 
     function collision($div1, $div2) {
