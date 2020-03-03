@@ -16,7 +16,7 @@ $(function() {
     let score = $('#score');
     let high_score = localStorage.getItem('high_score');
     $('#high_score').text(high_score);
-   let easy_mode=false;
+    let easy_mode=false;
 
    
     let container_left = parseInt(container.css('left'));
@@ -40,14 +40,11 @@ $(function() {
         if(easy_mode){
            easy_mode=false;
            speed=4;
-line_speed=7;
+           line_speed=7;
         }
         else{
             easy_mode=true;
-         }
-
-        }); 
-   
+         }}); 
     });
 
 //steering from keyboard
@@ -83,7 +80,7 @@ line_speed=7;
                 move_down = false;
             }
         }
-    });
+ });
 
     function left() {
         if (game_over === false && parseInt(car.css('left')) > 0) { //game cant be over and car cant move outside the container
@@ -113,45 +110,49 @@ line_speed=7;
         }
     }
 //steering from screen
-$(document).ready(function() {
-    $("#left").click(function(){
-        cancelAnimationFrame(move_right);
- move_right=false;
-        move_left = requestAnimationFrame(left);
-        setTimeout(leftHandlerDown,65);
-    }); 
-    $("#right").click(function(){
-        move_right = requestAnimationFrame(right);
-        setTimeout(rightHandlerDown,65);
-        cancelAnimationFrame(move_left);
- move_left=false;
-    }); 
-    $("#up").click(function(){
-        move_up = requestAnimationFrame(up);
-        setTimeout(upHandlerDown,65);
-    }); 
-    $("#down").click(function(){
-        move_down = requestAnimationFrame(down);
-        setTimeout(downHandlerDown,65);
-    }); 
-});
+    $(document).ready(function() {
+        $("#left").click(function(){
+           cancelAnimationFrame(move_right);
+           move_right=false;
+           move_left = requestAnimationFrame(left);
+           setTimeout(leftHandlerDown,65);
+        }); 
+        $("#right").click(function(){
+           move_right = requestAnimationFrame(right);
+           setTimeout(rightHandlerDown,65);
+           cancelAnimationFrame(move_left);
+           move_left=false;
+        }); 
+        $("#up").click(function(){
+           move_up = requestAnimationFrame(up);
+           setTimeout(upHandlerDown,65);
+        }); 
+        $("#down").click(function(){
+           move_down = requestAnimationFrame(down);
+           setTimeout(downHandlerDown,65);
+         }); 
+    });
 
-function leftHandlerDown (){
-cancelAnimationFrame(move_left);
- move_left=false;
-}
-function rightHandlerDown (){
-cancelAnimationFrame(move_right);
- move_right=false;
-}
-function upHandlerDown (){
-cancelAnimationFrame(move_up);
- move_up=false;
-}
-function downHandlerDown (){
-cancelAnimationFrame(move_down);
- move_down=false;
-}
+    function leftHandlerDown (){
+       cancelAnimationFrame(move_left);
+        move_left=false;
+    }
+
+    function rightHandlerDown (){
+       cancelAnimationFrame(move_right);
+       move_right=false;
+    }
+
+    function upHandlerDown (){
+       cancelAnimationFrame(move_up);
+       move_up=false;
+    }
+
+    function downHandlerDown (){
+       cancelAnimationFrame(move_down);
+       move_down=false;
+    }
+
     anim_id = requestAnimationFrame(repeat);
 
     function repeat() { //stopping game if collision is detected
@@ -160,7 +161,7 @@ cancelAnimationFrame(move_down);
             return;
         }
 
-score_counter++;
+    score_counter++;
 
         if (score_counter % 20 == 0) {
             score.text(parseInt(score.text()) + 1);
@@ -170,21 +171,21 @@ score_counter++;
             line_speed++
         }
 
-if (easy_mode==true){
+    if (easy_mode==true){
     speed=1;
     line_speed=1;
-}
+    }
 
 
-        car_down(car_1);
-        car_down(car_2);
-        car_down(car_3);
+    car_down(car_1);
+    car_down(car_2);
+    car_down(car_3);
 
-        line_down(line_1);
-        line_down(line_2);
-        line_down(line_3);
+    line_down(line_1);
+    line_down(line_2);
+    line_down(line_3);
 
-        anim_id = requestAnimationFrame(repeat);
+    anim_id = requestAnimationFrame(repeat);
     }
 
     function car_down(car) { //moving car 
@@ -248,7 +249,4 @@ if (easy_mode==true){
         if (b1 < y2 || y1 > b2 || r1 < x2 || x1 > r2) return false;
         return true;
     }
-
-
-
 });

@@ -16,6 +16,7 @@ body {
     background-color: #292929;
     overflow: hidden;
 }
+
 .line{
     position: absolute;
     height: 150px;
@@ -23,15 +24,19 @@ body {
     margin-left: 48%;
     background-color: rgba(255,255,255,0.5);
 }
+
 #line_1{
     top: -60px;
 }
+
 #line_2{
     top: 150px;
 }
+
 #line_3{
     top: 370px;
 }
+
 .car{
     position: absolute;
     height: 60px;
@@ -39,11 +44,13 @@ body {
     border-radius: 5px;
     box-shadow: 0px 1px 8px 0px black;
 }
+
 #car{
     bottom: 8%;
     left: 60%;
     background-color: #ffdf5a;
 }
+
 .f_glass{
     position: absolute;
     height: 20%;
@@ -53,6 +60,7 @@ body {
     border-radius: 0px 0px 5px 5px;
     background-color: #484848;
 }
+
 .b_glass{
     position: absolute;
     height: 20%;
@@ -62,6 +70,7 @@ body {
     border-radius: 5px 5px 0px 0px;
     background-color: #484848;
 }
+
 .f_light_l{
     position: absolute;
     height: 10%;
@@ -71,6 +80,7 @@ body {
     border-radius: 5px 5px 0px 0px;
     background-color: #efefef;
 }
+
 .f_light_r{
     position: absolute;
     height: 10%;
@@ -80,6 +90,7 @@ body {
     border-radius: 5px 5px 0px 0px;
     background-color: #efefef;
 }
+
 .f_tyre_l{
     position: absolute;
     height: 20%;
@@ -89,6 +100,7 @@ body {
     left: -10%;
     border-radius: 5px 0px 0px 5px;
 }
+
 .f_tyre_r{
     position: absolute;
     height: 20%;
@@ -98,6 +110,7 @@ body {
     left: 100%;
     border-radius: 0px 5px 5px 0px;
 }
+
 .b_tyre_l{
     position: absolute;
     height: 20%;
@@ -107,6 +120,7 @@ body {
     left: -10%;
     border-radius: 5px 0px 0px 5px;
 }
+
 .b_tyre_r{
     position: absolute;
     height: 20%;
@@ -116,21 +130,25 @@ body {
     left: 100%;
     border-radius: 0px 5px 5px 0px;
 }
+
 #car_1{
     top: -100px;
     left: 60%;
     background-color: black;
 }
+
 #car_2{
     top: -200px;
     left: 40%;
     background-color: red;
 }
+
 #car_3{
     top: -350px;
     left: 50%;
     background-color: #26c5ff;
 }
+
 #restart_div {
     position: absolute;
     height: 100%;
@@ -154,9 +172,11 @@ body {
     -moz-box-shadow: 10px 10px 24px 0px rgba(0,32,212,1);
     box-shadow: 10px 10px 24px 0px rgba(0,32,212,1);
 }
+
 .small_text{
     font-size: 15px;
 }
+
 #score_div{
     position: absolute;
     top:30%;
@@ -169,6 +189,7 @@ body {
     color: white;
     font-weight:bold;
 }
+
 #help{
     text-align: center;
     background-color: red;
@@ -179,16 +200,14 @@ body {
     background-color: #0079fc;
     color: white;
     border-radius:2px;
-
-
 }
+
 header{
-color:white;
+    color:white;
     text-align:center;
     background: rgb(162,162,162);
     background: linear-gradient(81deg, rgba(162,162,162,0.6646008745294993) 0%, rgba(221,221,221,0.09877454399728647) 100%);
 }
-
 
 .controls{
     position: absolute;
@@ -201,21 +220,27 @@ color:white;
     align-items: center;
     grid-row-gap: 50px;
 }
+
 .button-left{
     grid-area: 2 / 1 / 3 / 2;
 }
+
 .button-right{
     grid-area: 2 / 3 / 3 / 4;
 }
+
 .button-up{
     grid-area: 1 / 2 / 3 / 3;
 }
+
 .button-down{
     grid-area: 2 / 2 / 3/ 3;
 }
+
 .button-control button{
     width:60px;
 }
+
 #easy{
     position: absolute;
     top:92%;
@@ -236,15 +261,12 @@ color:white;
         font-size:16px;
     }
     #container{
-
         width: 40%;
         left: 15%;
-    
     }
     #easy{
         position: absolute;
         top:60%;
         left:78% ;
     }
-    
   }
